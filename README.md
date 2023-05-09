@@ -33,7 +33,7 @@ df = df[df['prob'] >= 0.6]
 5.Run 
 ```Python
 python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
-# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
+# Example: python Targets_Prediction.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
 6.Explanation:
    * The basic code of this crawler comes from https://github.com/fmayr/DHC_TargetPrediction . Due to updates of various databases over several years, original code cannot run properly anymore; therefore, a lot of modifications have been made based on it to meet current needs.
@@ -74,7 +74,7 @@ df = df[df['prob'] >= 0.6]
 5. 运行
 ```Python
 python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
-# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
+# Example: python Targets_Prediction.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
 6. 说明
    * 本爬虫基础代码来自于https://github.com/fmayr/DHC_TargetPrediction ，由于时隔数年，各大数据库相继更新，原代码已不可正常运行，故在其基础上做了大量修改已满足当前需要。
