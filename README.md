@@ -15,10 +15,10 @@
 
   python -m pip install -r requirements.txt    
 3. Run
-    ```python
-    python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
-    # Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
-    ```
+```Python
+python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
+# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
+```
 4. Examples of input and output csv files
    Please use standardized column names in the csv file for easy reading by the crawler program. Sample files can be found in the "example" folder.
 5. Description
