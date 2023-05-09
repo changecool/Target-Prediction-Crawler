@@ -12,7 +12,9 @@
 1. Chrome browser
    This crawler uses Chrome browser. Please download chromedriver.exe corresponding to your browser version and move it to C:\Windows folder.
 2. Install dependencies
-   ```python -m pip install -r requirements.txt```
+
+    python -m pip install -r requirements.txt
+    
 3. Run
     ``` python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__" ```
     ```# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"```
