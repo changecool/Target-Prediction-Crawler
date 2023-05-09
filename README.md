@@ -14,7 +14,7 @@
 2. Install dependencies
    ```python -m pip install -r requirements.txt```
 3. Run
-    ```python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"```
+    ``` python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__" ```
     ```# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"```
 4. Examples of input and output csv files
    Please use standardized column names in the csv file for easy reading by the crawler program. Sample files can be found in the "example" folder.
@@ -36,11 +36,11 @@
 1. Chrome浏览器
    本爬虫使用的Chrome浏览器，请自行下载浏览器版本对应的chromedriver.exe，并将其移动至C盘Windows文件夹下。
 2. 安装依赖环境
-   ```python -m pip install -r requirements.txt```
+    ``` python -m pip install -r requirements.txt ```
 3. 运行
     ```python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
     #  例子：python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"```
 4. 输入和输出csv文件举例
    请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“例子”文件夹查看。
 5. 说明
-   本爬虫基础代码来自于https://github.com/fmayr/DHC_TargetPrediction，由于时隔数年，各大数据库相继更新，原代码已不可正常运行，故在其基础上做了大量修改已满足当前需要。
+   本爬虫基础代码来自于https://github.com/fmayr/DHC_TargetPrediction ，由于时隔数年，各大数据库相继更新，原代码已不可正常运行，故在其基础上做了大量修改已满足当前需要。
