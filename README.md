@@ -21,9 +21,9 @@ python python Targets_Prediction.py --input "__your smiles.csv path__" --output 
 # Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
 4. Examples of input and output csv files:
-   Please use standardized column names in the csv file for easy reading by the crawler program. Sample files can be found in the "example" folder.
+  Please use standardized column names in the csv file for easy reading by the crawler program. Sample files can be found in the "example" folder.
 5. Description:
-   The basic code of this crawler comes from https://github.com/fmayr/DHC_TargetPrediction. Due to the passage of several years and the successive updates of various databases, the original code can no longer run properly. Therefore, we have made significant modifications based on it to meet current needs.
+  The basic code of this crawler comes from https://github.com/fmayr/DHC_TargetPrediction. Due to the passage of several years and the successive updates of various databases, the original code can no longer run properly. Therefore, we have made significant modifications based on it to meet current needs.
 
 # Target-Prediction-Crawler
 1. 支持数据库：
