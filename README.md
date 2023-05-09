@@ -32,7 +32,7 @@ df = df[df['prob'] >= 0.6]
 ```
 5.Run 
 ```Python
-python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
+python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
 # Example: python Targets_Prediction.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
 6.Explanation:
@@ -73,7 +73,7 @@ df = df[df['prob'] >= 0.6]
 ```
 5. 运行
 ```Python
-python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
+python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
 # Example: python Targets_Prediction.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
 6. 说明
