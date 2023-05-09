@@ -53,7 +53,7 @@ python python Targets_Prediction.py --input "__your smiles.csv path__" --output 
 1. Chrome浏览器
    * 本爬虫使用的Chrome浏览器，请自行下载浏览器版本对应的chromedriver.exe，并将其移动至C盘Windows文件夹下。
 2. 规范输入和输出csv文件
-   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“例子”文件夹查看。
+   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“Example”文件夹查看。
 3. 安装依赖环境
 ```Python
 python -m pip install -r requirements.txt
