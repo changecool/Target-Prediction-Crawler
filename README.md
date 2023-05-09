@@ -9,21 +9,34 @@
    * Automatic target filtering based on the prediction values of each dataset, such as STP's Probability* value.
    * Automatically obtain standard names of targets from uniprot database.
 # Installation and usage of the crawler
-1. Chrome browser
-   * This crawler uses Chrome browser. Please download chromedriver.exe corresponding to your browser version and move it to C:\Windows folder.
-2. Install dependencies
+1. Chrome Browser
+   * This crawler uses the Chrome browser. Please download the chromedriver.exe corresponding to your browser version and move it to the C:\Windows folder.
+2. Standardize input and output CSV files
+   * Please standardize column names in CSV files for easy reading by the crawler program. Example files can be found in the "Example" folder.
+3. Install dependency environment
 ```Python
 python -m pip install -r requirements.txt
 ```
-3. Run
+4. Set target screening threshold values 
+   * Please set STP, SEA, and SuperPred database thresholds respectively in lines 87, 179, and 254 of Targets_Prediction.py file.
+```Python
+## Retain target data from SwissTargetPrediction database with "Probability*" greater than or equal to 0.6.
+df = df[df['prob'] >= 0.6]
+
+## Retain target data from SEA database with "P-value" less than 0.05.
+df = df[df['prob'] < 0.05]
+
+## Retain target data in the SuperPred database with a "Probability" greater than or equal to 60%.
+df['prob'] = df['prob'].str.rstrip('%').astype('float') / 100
+df = df[df['prob'] >= 0.6]
+```
+5.Run 
 ```Python
 python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
 # Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
-4. Examples of input and output csv files
-   * Please use standardized column names in the csv file for easy reading by the crawler program. Sample files can be found in the "example" folder.
-5. Description
-   * The basic code of this crawler comes from https://github.com/fmayr/DHC_TargetPrediction. Due to the passage of several years and the successive updates of various databases, the original code can no longer run properly. Therefore, we have made significant modifications based on it to meet current needs.
+6.Explanation:
+   * The basic code of this crawler comes from https://github.com/fmayr/DHC_TargetPrediction . Due to updates of various databases over several years, original code cannot run properly anymore; therefore, a lot of modifications have been made based on it to meet current needs.
 
 # Target-Prediction-Crawler
 1. 支持数据库：
@@ -39,16 +52,29 @@ python python Targets_Prediction.py --input "__your smiles.csv path__" --output 
 # 爬虫的安装和使用
 1. Chrome浏览器
    * 本爬虫使用的Chrome浏览器，请自行下载浏览器版本对应的chromedriver.exe，并将其移动至C盘Windows文件夹下。
-2. 安装依赖环境
+2. 规范输入和输出csv文件
+   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“例子”文件夹查看。
+3. 安装依赖环境
 ```Python
 python -m pip install -r requirements.txt
 ```
-3. 运行
+4. 靶点筛选阈值设置
+   * 请在Targets_Prediction.py文件中lines87,179,254分别设置STP, SEA, SuperPred三个数据库的阈值。
+```Python
+## Retain target data from SwissTargetPrediction database with "Probability*" greater than or equal to 0.6.
+df = df[df['prob'] >= 0.6]
+
+## Retain target data from SEA database with "P-value" less than 0.05.
+df = df[df['prob'] < 0.05]
+
+## Retain target data in the SuperPred database with a "Probability" greater than or equal to 60%.
+df['prob'] = df['prob'].str.rstrip('%').astype('float') / 100
+df = df[df['prob'] >= 0.6]
+```
+5. 运行
 ```Python
 python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
 # Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
 ```
-4. 输入和输出csv文件举例
-   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“例子”文件夹查看。
-5. 说明
+6. 说明
    * 本爬虫基础代码来自于https://github.com/fmayr/DHC_TargetPrediction ，由于时隔数年，各大数据库相继更新，原代码已不可正常运行，故在其基础上做了大量修改已满足当前需要。
