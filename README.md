@@ -12,8 +12,9 @@
 1. Chrome browser
    This crawler uses Chrome browser. Please download chromedriver.exe corresponding to your browser version and move it to C:\Windows folder.
 2. Install dependencies
-
-  python -m pip install -r requirements.txt    
+```Python
+python -m pip install -r requirements.txt
+```
 3. Run
 ```Python
 python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
@@ -39,10 +40,14 @@ python python Targets_Prediction.py --input "__your smiles.csv path__" --output 
 1. Chrome浏览器
    本爬虫使用的Chrome浏览器，请自行下载浏览器版本对应的chromedriver.exe，并将其移动至C盘Windows文件夹下。
 2. 安装依赖环境
-    ``` python -m pip install -r requirements.txt ```
+```Python
+python -m pip install -r requirements.txt
+```
 3. 运行
-    ```python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
-    #  例子：python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"```
+```Python
+python python Targets_Prediction.py --input "__your smiles.csv path__" --output "__your output file path__"
+# Example: python targets.py --input "C:\Users\tcm\Desktop\SMILES.csv" --output "C:\Users\tcm\Desktop\targets.csv"
+```
 4. 输入和输出csv文件举例
    请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“例子”文件夹查看。
 5. 说明
