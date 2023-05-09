@@ -12,7 +12,7 @@
 1. Chrome Browser
    * This crawler uses the Chrome browser. Please download the chromedriver.exe corresponding to your browser version and move it to the C:\Windows folder.
 2. Standardize input and output CSV files
-   * Please standardize column names in CSV files for easy reading by the crawler program. Example files can be found in the "Example" folder.
+   * Please standardize the column names in the CSV file to facilitate the crawling program to read relevant content. Please refer to the two CSV sample files in the library.
 3. Install dependency environment
 ```Python
 python -m pip install -r requirements.txt
@@ -53,7 +53,7 @@ python python Targets_Prediction.py --input "__your smiles.csv path__" --output 
 1. Chrome浏览器
    * 本爬虫使用的Chrome浏览器，请自行下载浏览器版本对应的chromedriver.exe，并将其移动至C盘Windows文件夹下。
 2. 规范输入和输出csv文件
-   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，示例文件请在“Example”文件夹查看。
+   * 请规范csv文件里面列名，以方便爬虫程序读取相关内容，请参看库中两个csv示例文件。
 3. 安装依赖环境
 ```Python
 python -m pip install -r requirements.txt
