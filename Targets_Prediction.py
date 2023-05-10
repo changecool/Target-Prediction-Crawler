@@ -28,7 +28,7 @@ def SwissCrawler (smiles, CpdName):
     all_pages_processed = False
     while retries < max_retries and not all_pages_processed:
         try:
-            WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, '//*[@id="resultTable"]/tbody')))
+            WebDriverWait(driver, 200).until(EC.presence_of_element_located((By.XPATH, '//*[@id="resultTable"]/tbody')))
             CurrUrl = driver.current_url 
             df = pd.read_html(CurrUrl) 
             df = df[0] 
@@ -129,7 +129,7 @@ def SEACrawler (smiles, CpdName):
     retries = 0  
     while retries < max_retries:
         try:
-            WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div/table/tbody'))) 
+            WebDriverWait(driver, 200).until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div/table/tbody'))) 
             CurrUrl = driver.current_url 
             df = pd.read_html(CurrUrl) 
             df = df[0] 
@@ -196,7 +196,7 @@ def SuperPredCrawler (smiles, CpdName):
     all_pages_processed = False
     while retries < max_retries and not all_pages_processed:
         try:
-            WebDriverWait(driver, 120).until(EC.presence_of_all_elements_located((By.TAG_NAME, 'table')))
+            WebDriverWait(driver, 200).until(EC.presence_of_all_elements_located((By.TAG_NAME, 'table')))
             table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="targets"]')))
             table_html = table.get_attribute('outerHTML')
             df = pd.read_html(table_html, header=0)[0]
