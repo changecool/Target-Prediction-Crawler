@@ -19,7 +19,7 @@ def SwissCrawler (smiles, CpdName):
     SwissUrl = 'http://www.swisstargetprediction.ch/index.php'
     platform = 'SwissTargetPrediction' 
     driver.get(SwissUrl) 
-    SearchField = driver.find_element_by_name('smiles')  
+    SearchField = driver.find_element(By.NAME, 'smiles') 
     SearchField.send_keys(smiles) 
     SearchField.submit() 
     dfs = []  
@@ -40,7 +40,7 @@ def SwissCrawler (smiles, CpdName):
             dfs.append(df)  
             ## Determine whether the current page is the last page. If it is not the last page, click the "Next" button to load the next page.
             try:
-                next_button = driver.find_element_by_xpath('//*[@id="resultTable_next"]')
+                next_button = driver.find_element(By.XPATH, '//*[@id="resultTable_next"]')
                 if (df['prob'] == 0).any():  
                     all_pages_processed = True
                 elif next_button.get_attribute("class") == "paginate_button next disabled":
@@ -122,7 +122,7 @@ def SEACrawler (smiles, CpdName):
     SEAUrl = 'http://sea.bkslab.org/' 
     platform = 'SEA'
     driver.get(SEAUrl)
-    SearchField = driver.find_element_by_name('query_custom_targets_paste') 
+    SearchField = driver.find_element(By.NAME, 'query_custom_targets_paste') 
     SearchField.send_keys(smiles) 
     SearchField.submit() 
     max_retries = 3  
@@ -184,11 +184,11 @@ def SuperPredCrawler (smiles, CpdName):
     platform = 'SuperPred'
     SPUrl = 'https://prediction.charite.de/subpages/target_prediction.php'
     driver.get(SPUrl) 
-    SearchField = driver.find_element_by_xpath('//*[@id="smiles_string"]') 
+    SearchField = driver.find_element(By.XPATH, '//*[@id="smiles_string"]') 
     SearchField.send_keys(smiles) 
-    search_button = driver.find_elements_by_xpath('/html/body/div[2]/div/div/form/div[2]/div/div/button')[0] 
+    search_button = driver.find_elements(By.XPATH, '/html/body/div[2]/div/div/form/div[2]/div/div/button')[0] 
     search_button.click() 
-    startcalculation_button = driver.find_element_by_xpath('/html/body/div[2]/center/form/table/tbody/tr/td/button') 
+    startcalculation_button = driver.find_element(By.XPATH, '/html/body/div[2]/center/form/table/tbody/tr/td/button') 
     startcalculation_button.click() 
     dfsp = [] 
     max_retries = 3  
@@ -208,7 +208,7 @@ def SuperPredCrawler (smiles, CpdName):
             dfsp.append(df)  
             ## Check if the "Next" button is available
             try:
-                next_button = driver.find_element_by_xpath('//*[@id="targets_next"]')
+                next_button = driver.find_element(By.XPATH, '//*[@id="targets_next"]')
                 if next_button.get_attribute("class") == "paginate_button next disabled":
                     all_pages_processed = True  
             except NoSuchElementException:
@@ -321,7 +321,9 @@ if __name__ == '__main__':
     ## The following code is used to start crawling.
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    driver = webdriver.Chrome('C:\\Windows\\chromedriver.exe', options=options)
+    driver = webdriver.Chrome(options=options)
+
+    # driver = webdriver.Chrome('C:\\Windows\\chromedriver.exe', options=options)
     cols = ['compound','platform','prob','UniProt_name'] 
     results = pd.DataFrame(columns=cols)
     results.to_csv(args.output,sep=',')     
